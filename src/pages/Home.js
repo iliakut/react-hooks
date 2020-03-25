@@ -7,7 +7,6 @@ export const Home = () => {
     .fill('')
     .map((_, i) => i);
 
-
   return (
     <Fragment>
       <Search/>
