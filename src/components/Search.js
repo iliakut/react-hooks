@@ -18,7 +18,7 @@ export const Search = () => {
       alert.hide();
       github.search(value.trim());
     } else {
-      alert.show('Enter some text!')
+      alert.show('Enter user name!')
     }
   };
 
