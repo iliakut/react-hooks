@@ -1,9 +1,10 @@
 import React, {useContext, useEffect, Fragment} from "react";
 import {GithubContext} from "../context/github/githubContext";
 import {Link} from "react-router-dom";
+import {Repos} from "../components/Repos";
 
 export const Profile = ({match}) => {
-  const {getUser, getRepos, loading, user} = useContext(GithubContext);
+  const {getUser, getRepos, loading, user, repos} = useContext(GithubContext);
   const urlName = match.params.name;
 
   useEffect(() => {
@@ -27,7 +28,7 @@ export const Profile = ({match}) => {
   return (
     <Fragment>
       <Link to="/" className="btn btn-link">Main page</Link>
-      <div className="card md-4">
+      <div className="card mb-4">
         <div className="card-body">
           <div className="row">
             <div className="col-sm-3 text-center">
@@ -78,6 +79,7 @@ export const Profile = ({match}) => {
 
         </div>
       </div>
+      <Repos repos={repos}/>
     </Fragment>
   )
 };
